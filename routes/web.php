@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CetakController;
 use App\Http\Controllers\Masyarakat\PengaduanController;
 use App\Http\Controllers\Admin\PengaduanController as PengaduanAController;
 use App\Http\Controllers\Admin\TanggapanController;
@@ -34,6 +35,7 @@ Route::middleware('auth')->group(function () {
 
         Route::middleware(['role:admin'])->group(function () {
             Route::get('/user-management', [UserManagementController::class, 'index'])->name('userman.index');
+            Route::get('/cetak/{pengaduan:slug}', [CetakController::class, 'cetak'])->name('cetak');
         });
     });
 });
