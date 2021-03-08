@@ -141,7 +141,7 @@
                                     </div>
                                 </div>
                             </div>
-
+                            <a href="{{ route('cetak', $pengaduan->slug) }}" class="btn btn-outline-info btn-sm" target="_blank">Cetak</a>
                         @endif
                     </div>
                 </div>
