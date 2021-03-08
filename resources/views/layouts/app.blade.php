@@ -35,6 +35,15 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
+                        @role('admin')
+                        <li class="nav-item">
+                            <a class="nav-link @yield('pengaduan-link')" href="{{ route('admin.index') }}">{{ __('Pengaduan') }}</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link @yield('userman-link')" href="{{ route('userman.index') }}">{{ __('User Management') }}</a>
+                        </li>
+                        @endrole
 
                     </ul>
 
@@ -54,12 +63,6 @@
                         </li>
                         @endif
                         @else
-
-                        @role('admin')
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('userman.index') }}">{{ __('User Management') }}</a>
-                        </li>
-                        @endrole
 
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

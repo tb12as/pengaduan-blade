@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('pengaduan-link', 'active')
 
 @section('content')
 
