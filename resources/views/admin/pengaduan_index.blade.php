@@ -3,16 +3,62 @@
 @section('content')
 
     <div class="container">
+        <div class="row my-2 justify-content-center">
+            <div class="col-md-3 m-1">
+                <div class="card bg-success text-white">
+                    <div class="card-body">
+                        <div class="row justify-content-center align-items-center">
+                            <div class="col-md-3">
+                                <h1 class="display-4">{{ count($data->where('status', 'selesai')) }}</h1>
+                            </div>
+                            <div class="col-md-9">
+                                Pengaduan selesai
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 m-1">
+                <div class="card bg-info text-white">
+                    <div class="card-body">
+                        <div class="row justify-content-center align-items-center">
+                            <div class="col-md-3">
+                                <h1 class="display-4">{{ count($data->where('status', 'proses')) }}</h1>
+                            </div>
+                            <div class="col-md-9">
+                                Pengaduan dalam proses
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 m-1">
+                <div class="card bg-danger text-white">
+                    <div class="card-body">
+                        <div class="row justify-content-center align-items-center">
+                            <div class="col-md-3">
+                                <h1 class="display-4">{{ count($data->where('status', 'terkirim')) }}</h1>
+                            </div>
+                            <div class="col-md-9">
+                                Pengaduan Baru
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="row justify-content-center">
             <div class="col-md-9">
                 <div class="card">
-                    <div class="card-header">{{ __('Pengaduan Masyarakat') }}</div>
+                    <div class="card-header bg-dark text-light">{{ __('Pengaduan Masyarakat') }}</div>
 
                     <div class="card-body">
 
                         <p>Semua Pengaduan</p>
-                        <table class="table table-bordered">
-                            <thead class="thead-dark">
+                        <table class="table table-bordered table-hover">
+                            <thead>
                                 <tr>
                                     <th>No</th>
                                     <th>Pelapor</th>
@@ -27,7 +73,7 @@
                                         <td> {{ $loop->iteration }} </td>
                                         <td>{{ $d->status }}</td>
                                         <td>{{ $d->user->name }}</td>
-                                        <td>{{ Str::words($d->isi_laporan, 6, '...') }}</td>
+                                        <td>{{ Str::words($d->isi_laporan, 4, '...') }}</td>
                                         <td>
                                             @if ($d->status == 'terkirim')
                                                 <button type="button" class="btn btn-info btn-sm" data-toggle="modal"

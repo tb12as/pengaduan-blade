@@ -24,9 +24,11 @@ Route::middleware('auth')->group(function () {
     });
 
     Route::middleware(['role:admin|petugas'])->prefix('admin')->group(function () {
-        Route::get('/', [PengaduanAController::class, 'index'])->name('admin.index');
-        Route::get('/{pengaduan:slug}/detail', [PengaduanAController::class, 'show'])->name('pa.detail');
-        Route::post('/{pengaduan:slug}/valid', [PengaduanAController::class, 'valid'])->name('pengaduan.valid');
+        Route::prefix('pengaduan')->group(function () {
+            Route::get('/', [PengaduanAController::class, 'index'])->name('admin.index');
+            Route::get('/{pengaduan:slug}/detail', [PengaduanAController::class, 'show'])->name('pa.detail');
+            Route::post('/{pengaduan:slug}/valid', [PengaduanAController::class, 'valid'])->name('pengaduan.valid');
+        });
 
         Route::post('/tanggapan/', [TanggapanController::class, 'store'])->name('tanggapan.store');
 
