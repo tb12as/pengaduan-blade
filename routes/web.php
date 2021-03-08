@@ -34,8 +34,21 @@ Route::middleware('auth')->group(function () {
         Route::post('/tanggapan/', [TanggapanController::class, 'store'])->name('tanggapan.store');
 
         Route::middleware(['role:admin'])->group(function () {
-            Route::get('/user-management', [UserManagementController::class, 'index'])->name('userman.index');
             Route::get('/cetak/{pengaduan:slug}', [CetakController::class, 'cetak'])->name('cetak');
+
+            Route::prefix('user-management')->group(function() {
+                Route::get('/', [UserManagementController::class, 'index'])->name('userman.index');
+                Route::get('/petugas/create', [UserManagementController::class, 'create_petugas'])->name('petugas.create');
+                Route::post('/petugas/', [UserManagementController::class, 'petugas_store'])->name('petugas.store');
+                Route::delete('/petugas/{user:id}', [UserManagementController::class, 'destroy'])->name('user.destroy');
+
+
+                Route::get('/masyarakat/create', [UserManagementController::class, 'create_masyarakat'])->name('masyarakat.create');
+                Route::post('/masyarakat', [UserManagementController::class, 'masyarakat_store'])->name('masyarakat.store');
+
+
+            });
+
         });
     });
 });
