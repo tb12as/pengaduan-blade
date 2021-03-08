@@ -25,7 +25,7 @@ class PengaduanFactory extends Factory
         return [
             'user_id' => 2,
             'isi_laporan' => $this->faker->sentence(40),
-            'slug' => 'laporan-masyarkat-'.Str::random(20)
+            'slug' => 'laporan-masyarakat-'.Str::random(20)
         ];
     }
 }
