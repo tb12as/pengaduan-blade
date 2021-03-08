@@ -6,7 +6,6 @@ Ini buat ukk, pakai blade dong, cadangan kalau PC sekolah lemot sih
  - Admin : validasi pengaduan, tanggapi
 
 ## Yang belum
- - Cetak laporan
  - User management (termasuk masyarakat dan petugas) -> tidak pasti
 
 ## Catatan 
