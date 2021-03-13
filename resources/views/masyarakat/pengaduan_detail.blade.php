@@ -33,7 +33,7 @@
                     @else
                     <p class="alert alert-primary">Pengaduan telah ditanggapi</p>
                     <textarea disabled cols="" rows="5" class="form-control">{{ $tanggapan->isi_tanggapan }}</textarea>
-                    <p class="small my-2">Ditanggapi oleh {{ $tanggapan->user->name }} pada {{ date('d-m-Y, H:i:s', strtotime($tanggapan->created_at)) }}</p>
+                    <p class="small my-2">Ditanggapi oleh {{ $tanggapan->user->name }} pada {{ $tanggapan->created_at }}</p>
                     @endif
                 </div>
             </div>

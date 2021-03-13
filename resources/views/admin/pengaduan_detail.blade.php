@@ -18,7 +18,7 @@
                         @endif
 
                         <p class="my-3">Dikirim oleh {{ $pengaduan->user->name }} pada
-                            {{ date('d-m-Y, H:i:s', strtotime($pengaduan->created_at)) }}</p>
+                            {{ $pengaduan->created_at }}</p>
 
                         <a href="{{ route('admin.index') }}" class="btn btn-secondary btn-sm my-3">Back</a>
                     </div>

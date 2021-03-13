@@ -46,7 +46,7 @@
             <h2>Sistem Pengaduan Masyarakat</h2>
         </center>
         <center>
-            <p>Laporan ini diterima pada {{ date('d-m-Y, H:i:s', strtotime($data->created_at)) }}</p>
+            <p>Laporan ini diterima pada {{ $data->created_at }}</p>
         </center>
     </div>
     <hr>
