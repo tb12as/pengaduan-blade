@@ -32,7 +32,7 @@
                             <label for="isi_laporan" class="col-md-4 col-form-label text-md-right">{{ __('Isi Laporan') }}</label>
 
                             <div class="col-md-6">
-                                <textarea name="isi_laporan" id="isi_laporan" cols="" rows="5" class="form-control @error('isi_laporan') is-invalid @enderror"></textarea>
+                                <textarea name="isi_laporan" id="isi_laporan" cols="" rows="5" class="form-control @error('isi_laporan') is-invalid @enderror">{{ old('isi_laporan') }}</textarea>
 
                                 @error('isi_laporan')
                                 <span class="invalid-feedback" role="alert">
