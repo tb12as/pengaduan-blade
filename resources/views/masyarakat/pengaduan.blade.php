@@ -6,14 +6,14 @@
         <div class="row justify-content-center">
             <div class="col-md-9">
                 <div class="card">
-                    <div class="card-header">{{ __('Pengaduan Masyarakat') }}</div>
+                    <div class="card-header text-light bg-dark">{{ __('Pengaduan Masyarakat') }}</div>
 
                     <div class="card-body">
-
                         <p>Semua Pengaduan yang anda buat Akan ditampilkan pada Table dibawah</p>
+
                         <a href="{{ route('pengaduan.create') }}" class="btn my-3 btn-primary btn-sm float-right">Buat
                             Pengaduan</a>
-                        <table class="table table-borderd">
+                        <table class="table table-bordered">
                             <thead>
                                 <tr>
                                     <th>No</th>
@@ -73,7 +73,7 @@
                                     </tr>
                                 @empty
                                     <tr>
-                                        <td colspan="4">Anda belum membuat pengaduan</td>
+                                        <td colspan="4" class="text-center">Anda belum membuat pengaduan</td>
                                     </tr>
                                 @endforelse
                             </tbody>
