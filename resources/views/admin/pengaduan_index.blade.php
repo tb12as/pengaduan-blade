@@ -9,10 +9,10 @@
                 <div class="card bg-success text-white">
                     <div class="card-body">
                         <div class="row justify-content-center align-items-center">
-                            <div class="col-md-3">
-                                <h1 class="display-4">{{ count($data->where('status', 'selesai')) }}</h1>
+                            <div class="col-md-5">
+                                <h1 class="">{{ count($data->where('status', 'selesai')) }}</h1>
                             </div>
-                            <div class="col-md-9">
+                            <div class="col-md-7">
                                 Pengaduan selesai
                             </div>
                         </div>
@@ -24,10 +24,10 @@
                 <div class="card bg-info text-white">
                     <div class="card-body">
                         <div class="row justify-content-center align-items-center">
-                            <div class="col-md-3">
-                                <h1 class="display-4">{{ count($data->where('status', 'proses')) }}</h1>
+                            <div class="col-md-5">
+                                <h1 class="">{{ count($data->where('status', 'proses')) }}</h1>
                             </div>
-                            <div class="col-md-9">
+                            <div class="col-md-7">
                                 Pengaduan dalam proses
                             </div>
                         </div>
@@ -39,10 +39,10 @@
                 <div class="card bg-danger text-white">
                     <div class="card-body">
                         <div class="row justify-content-center align-items-center">
-                            <div class="col-md-3">
-                                <h1 class="display-4">{{ count($data->where('status', 'terkirim')) }}</h1>
+                            <div class="col-md-5">
+                                <h1 class="">{{ count($data->where('status', 'terkirim')) }}</h1>
                             </div>
-                            <div class="col-md-9">
+                            <div class="col-md-7">
                                 Pengaduan Baru
                             </div>
                         </div>
@@ -128,7 +128,7 @@
                                     </tr>
                                 @empty
                                     <tr>
-                                        <td colspan="4">Anda belum membuat pengaduan</td>
+                                        <td colspan="4" class="text-center">Tidak ada pengaduan untuk ditampilkan</td>
                                     </tr>
                                 @endforelse
                             </tbody>
