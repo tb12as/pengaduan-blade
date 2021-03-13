@@ -14,7 +14,6 @@
                     @endif
 
                     <a href="{{ route('petugas.create') }}" class="btn m-2 btn-info btn-sm my-3 float-right">Tambah Petugas</a>
-                    <a href="{{ route('masyarakat.create') }}" class="btn m-2 btn-primary btn-sm my-3 float-right">Tambah Masyarakat</a>
 
                     <table class="table table-bordered">
                         <thead class="thead-dark">
@@ -41,6 +40,9 @@
                                     @else
                                     <p class="badge badge-primary">Active now</p>
                                     @endif
+                                    @if($user->hasRole('petugas'))
+                                    <a href="{{ route('petugas.edit', $user->id) }}" class="btn btn-sm btn-warning">Edit</a>
+                                    @endif
                                 </td>
                             </tr>
                             @endforeach
@@ -66,6 +68,7 @@
         </div>
         <div class="modal-body">
             <p class="alert alert-danger">Hapus User? Aksi ini tidak dapat dibatalkan</p>
+            <p class="m-2">Semua pengaduan yang dibuat user ini juga akan terhapus!</p>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary"

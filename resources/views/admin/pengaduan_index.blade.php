@@ -114,8 +114,11 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                @elseif($d->status == 'selesai')
-                                                <a href="{{ route('cetak', $d->slug) }}" target="_blank" class="btn btn-sm btn-outline-info">Cetak</a>
+                                            @elseif($d->status == 'selesai')
+                                                @role('admin')
+                                                <a href="{{ route('cetak', $d->slug) }}" target="_blank"
+                                                    class="btn btn-sm btn-outline-info">Cetak</a>
+                                                @endrole
                                             @endif
 
                                             <a href="{{ route('pa.detail', $d->slug) }}"

@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MasyarakatStoreRequest;
 use App\Http\Requests\PetugasStoreRequest;
+use App\Http\Requests\PetugasUpdateRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -21,11 +21,6 @@ class UserManagementController extends Controller
     	return view('admin.petugas_create');
     }
 
-    public function create_masyarakat()
-    {
-    	return view('admin.masyarakat_create');
-    }
-
     public function petugas_store(PetugasStoreRequest $request)
     {
     	$d = User::create($request->validated());
@@ -34,18 +29,23 @@ class UserManagementController extends Controller
         session()->flash('success', 'Petugas berhasil ditambahkan');
 
     	return redirect()->route('userman.index');
-
     }
 
-    public function masyarakat_store(MasyarakatStoreRequest $request)
+    public function petugas_edit(User $user)
     {
-        $d = User::create($request->validated());
-        $d->attachRole('masyarakat');
+        return view('admin.petugas_edit', compact('user'));
+    }
 
-        session()->flash('success', 'Masyarakat berhasil ditambahkan');
+    public function petugas_update(PetugasUpdateRequest $request, User $user)
+    {
+        $data = $request->validated();
+        $data['password'] = $request->password ? bcrypt($request->password) : $user->password;
 
-        return redirect()->route('userman.index');
+        $user->update($data);
 
+        session()->flash('success', 'Data petugas berhasil diupdate');
+
+    	return redirect()->route('userman.index');
     }
 
     public function destroy(User $user)

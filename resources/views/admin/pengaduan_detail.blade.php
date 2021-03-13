@@ -82,7 +82,8 @@
                                                     data-dismiss="modal">Close</button>
                                                 <button type="button" class="btn btn-info"
                                                     onclick="event.preventDefault(); document.getElementById('deleteForm').submit()">Valid</button>
-                                                <form method="POST" action="{{ route('pengaduan.valid', $pengaduan->slug) }}"
+                                                <form method="POST"
+                                                    action="{{ route('pengaduan.valid', $pengaduan->slug) }}"
                                                     id="deleteForm">
                                                     @csrf
                                                 </form>
@@ -141,7 +142,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="{{ route('cetak', $pengaduan->slug) }}" class="btn btn-outline-info btn-sm" target="_blank">Cetak</a>
+                            @role('admin')
+                            <a href="{{ route('cetak', $pengaduan->slug) }}" class="btn btn-outline-info btn-sm"
+                                target="_blank">Cetak</a>
+                            @endrole
                         @endif
                     </div>
                 </div>

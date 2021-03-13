@@ -41,12 +41,9 @@ Route::middleware('auth')->group(function () {
                 Route::get('/petugas/create', [UserManagementController::class, 'create_petugas'])->name('petugas.create');
                 Route::post('/petugas/', [UserManagementController::class, 'petugas_store'])->name('petugas.store');
                 Route::delete('/petugas/{user:id}', [UserManagementController::class, 'destroy'])->name('user.destroy');
+                Route::get('/petugas/{user:id}/edit', [UserManagementController::class, 'petugas_edit'])->name('petugas.edit');
 
-
-                Route::get('/masyarakat/create', [UserManagementController::class, 'create_masyarakat'])->name('masyarakat.create');
-                Route::post('/masyarakat', [UserManagementController::class, 'masyarakat_store'])->name('masyarakat.store');
-
-
+                Route::patch('/petugas/{user:id}/update', [UserManagementController::class, 'petugas_update'])->name('petugas.update');
             });
 
         });
