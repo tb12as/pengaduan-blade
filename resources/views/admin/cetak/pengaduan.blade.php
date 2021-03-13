@@ -122,7 +122,7 @@
     </div>
 
     <div class="container">
-        <h3>Detail Pelapor</h3>
+        <h3>Detail Pemberi Tanggapan</h3>
         <table>
             <tr>
                 <td>Nama</td>
