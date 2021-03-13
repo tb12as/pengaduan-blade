@@ -51,6 +51,6 @@ class SettingController extends Controller
 
         session()->flash('success', 'Setting updated');
 
-        return redirect()->route('home');
+        return back();
     }
 }
