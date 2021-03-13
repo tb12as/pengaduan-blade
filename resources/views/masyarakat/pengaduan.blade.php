@@ -15,9 +15,9 @@
 
                         <p>Semua Pengaduan yang anda buat Akan ditampilkan pada Table dibawah</p>
 
-                        <a href="{{ route('pengaduan.create') }}" class="btn my-3 btn-primary btn-sm float-right">Buat
+                        <a href="{{ route('pengaduan.create') }}" class="btn my-3 btn-primary btn-sm">Buat
                             Pengaduan</a>
-                        <table class="table table-bordered">
+                        <table class="table table-bordered" id="table">
                             <thead>
                                 <tr>
                                     <th>No</th>
@@ -31,7 +31,7 @@
                                     <tr>
                                         <td> {{ $loop->iteration }} </td>
                                         <td>{{ $d->status }}</td>
-                                        <td>{{ Str::words($d->isi_laporan, 6, '...') }}</td>
+                                        <td>{{ Str::words($d->isi_laporan, 4, '...') }}</td>
                                         <td>
                                             @if ($d->status == 'terkirim')
                                                 <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
@@ -88,4 +88,12 @@
         </div>
     </div>
 
+@endsection
+
+@section('script')
+<script>
+    $(document).ready(function() {
+        $('#table').DataTable(); 
+    });
+</script>
 @endsection

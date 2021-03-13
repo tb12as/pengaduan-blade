@@ -13,9 +13,9 @@
                     <p class="alert alert-success">{{ Session::get('success') }}</p>
                     @endif
 
-                    <a href="{{ route('petugas.create') }}" class="btn m-2 btn-info btn-sm my-3 float-right">Tambah Petugas</a>
+                    <a href="{{ route('petugas.create') }}" class="btn m-2 btn-info btn-sm my-3">Tambah Petugas</a>
 
-                    <table class="table table-bordered">
+                    <table class="table table-bordered" id="table">
                         <thead>
                             <tr>
                                 <th>No</th>
@@ -85,4 +85,12 @@
 </div>
 @endforeach
 
+@endsection
+
+@section('script')
+<script>
+    $(document).ready(function() {
+        $('#table').DataTable(); 
+    });
+</script>
 @endsection

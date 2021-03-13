@@ -62,7 +62,7 @@
                         @endif
 
                         <p>Semua Pengaduan</p>
-                        <table class="table table-bordered table-hover">
+                        <table class="table table-bordered table-hover" id="table">
                             <thead>
                                 <tr>
                                     <th>No</th>
@@ -143,4 +143,12 @@
         </div>
     </div>
 
+@endsection
+
+@section('script')
+<script>
+    $(document).ready(function() {
+        $('#table').DataTable(); 
+    });
+</script>
 @endsection
