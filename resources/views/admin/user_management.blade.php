@@ -7,7 +7,7 @@
     <div class="row justify-content-center">
         <div class="col-md-9">
             <div class="card">
-                <div class="card-header">User Management</div>
+                <div class="card-header bg-dark text-light">User Management</div>
                 <div class="card-body">
                     @if(Session::has('success'))
                     <p class="alert alert-success">{{ Session::get('success') }}</p>
@@ -16,7 +16,7 @@
                     <a href="{{ route('petugas.create') }}" class="btn m-2 btn-info btn-sm my-3 float-right">Tambah Petugas</a>
 
                     <table class="table table-bordered">
-                        <thead class="thead-dark">
+                        <thead>
                             <tr>
                                 <th>No</th>
                                 <th>Nama</th>
