@@ -32,11 +32,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        @role('admin')
+                        @auth
                         <li class="nav-item">
-                            <a class="nav-link @yield('pengaduan-link')" href="{{ route('admin.index') }}">{{ __('Pengaduan') }}</a>
+                            <a class="nav-link @yield('pengaduan-link')" href="{{ route('home') }}">{{ __('Pengaduan') }}</a>
                         </li>
+                        @endauth
 
+                        @role('admin')
                         <li class="nav-item">
                             <a class="nav-link @yield('userman-link')" href="{{ route('userman.index') }}">{{ __('User Management') }}</a>
                         </li>
