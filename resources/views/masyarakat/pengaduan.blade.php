@@ -9,6 +9,10 @@
                     <div class="card-header text-light bg-dark">{{ __('Pengaduan Masyarakat') }}</div>
 
                     <div class="card-body">
+                        @if(Session::has('success'))
+                        <p class="alert alert-primary ">{{ Session::get('success') }}</p>
+                        @endif
+
                         <p>Semua Pengaduan yang anda buat Akan ditampilkan pada Table dibawah</p>
 
                         <a href="{{ route('pengaduan.create') }}" class="btn my-3 btn-primary btn-sm float-right">Buat

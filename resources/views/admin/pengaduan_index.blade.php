@@ -57,6 +57,10 @@
 
                     <div class="card-body">
 
+                        @if(Session::has('success'))
+                        <p class="alert alert-primary ">{{ Session::get('success') }}</p>
+                        @endif
+
                         <p>Semua Pengaduan</p>
                         <table class="table table-bordered table-hover">
                             <thead>

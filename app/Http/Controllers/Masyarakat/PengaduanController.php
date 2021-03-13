@@ -46,6 +46,8 @@ class PengaduanController extends Controller
             'foto' => $namaFileFinal ?? null,
         ]);
 
+        session()->flash('success', 'Pengaduan berhasil dibuat');
+
         return redirect()->route('masyarakat.index');
     }
 
@@ -81,6 +83,8 @@ class PengaduanController extends Controller
             'foto' => $namaFileFinal ?? $pengaduan->foto,
         ]);
 
+        session()->flash('success', 'Pengaduan berhasil diubah');
+
         return redirect()->route('masyarakat.index');
     }
 
@@ -91,6 +95,9 @@ class PengaduanController extends Controller
         }
 
         $pengaduan->delete();
+
+        session()->flash('success', 'Pengaduan berhasil dihapus');
+
         return back();
 
     }
