@@ -15,7 +15,7 @@
 
                     <a href="{{ route('petugas.create') }}" class="btn m-2 btn-info btn-sm my-3">Tambah Petugas</a>
 
-                    <table class="table table-bordered" id="table">
+                    <table class="table table-bordered table-responsive-lg" id="table">
                         <thead>
                             <tr>
                                 <th>No</th>

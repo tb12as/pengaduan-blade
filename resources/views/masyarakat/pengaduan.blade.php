@@ -17,7 +17,7 @@
 
                         <a href="{{ route('pengaduan.create') }}" class="btn my-3 btn-primary btn-sm">Buat
                             Pengaduan</a>
-                        <table class="table table-bordered" id="table">
+                        <table class="table table-bordered table-responsive-lg" id="table">
                             <thead>
                                 <tr>
                                     <th>No</th>

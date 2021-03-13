@@ -62,7 +62,7 @@
                         @endif
 
                         <p>Semua Pengaduan</p>
-                        <table class="table table-bordered table-hover" id="table">
+                        <table class="table table-bordered table-responsive-lg table-hover" id="table">
                             <thead>
                                 <tr>
                                     <th>No</th>
@@ -76,8 +76,8 @@
                                 @forelse($data as $d)
                                     <tr>
                                         <td> {{ $loop->iteration }} </td>
-                                        <td>{{ $d->status }}</td>
                                         <td>{{ $d->user->name }}</td>
+                                        <td>{{ $d->status }}</td>
                                         <td>{{ Str::words($d->isi_laporan, 4, '...') }}</td>
                                         <td>
                                             @if ($d->status == 'terkirim')
