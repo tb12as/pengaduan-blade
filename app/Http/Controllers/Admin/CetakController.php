@@ -14,6 +14,9 @@ class CetakController extends Controller
         $data = Pengaduan::with(['user', 'tanggapan' => fn($q) => $q->with('user')])->where('slug', $slug)->firstOrFail();
 
         $file = PDF::loadView('admin.cetak.pengaduan', compact('data'));
+        
+        $file->setPaper('a4');
+
         return $file->stream($data->slug. '.pdf');
     }
 }
