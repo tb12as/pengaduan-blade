@@ -5,6 +5,7 @@ Ini buat ukk, pakai blade dong, cadangan kalau PC sekolah lemot sih
  - Masyarakat (semua fitur) 
  - Admin : validasi pengaduan, tanggapi
  - Petugas management
+ - Cetak laporan (admin)
 
 ## Yang belum
  
