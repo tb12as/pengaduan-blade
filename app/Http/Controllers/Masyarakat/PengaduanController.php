@@ -7,6 +7,7 @@ use App\Http\Requests\PengaduanRequest;
 use App\Models\Pengaduan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class PengaduanController extends Controller
 {
@@ -31,7 +32,7 @@ class PengaduanController extends Controller
             $file = $request->file('foto');
             $ex = $file->getClientOriginalExtension();
 
-            $namaFile = \Str::random(20).".$ex";
+            $namaFile = Str::random(20).".$ex";
 
             $file->move(public_path()."/foto_pengaduan/", $namaFile);
 
@@ -41,7 +42,7 @@ class PengaduanController extends Controller
         Pengaduan::create([
             'user_id' => Auth::id(),
             'isi_laporan' => $request->isi_laporan,
-            'slug' => 'laporan-masyarakat-'.rand(),
+            'slug' => Str::slug('laporan-masyarakat-'.Str::random(20)),
             'foto' => $namaFileFinal ?? null,
         ]);
 
@@ -68,7 +69,7 @@ class PengaduanController extends Controller
             $file = $request->file('foto');
             $ex = $file->getClientOriginalExtension();
 
-            $namaFile = \Str::random(20).".$ex";
+            $namaFile = Str::random(20).".$ex";
 
             $file->move(public_path()."/foto_pengaduan/", $namaFile);
 
